@@ -1,28 +1,27 @@
-
 class Encryptor:
-    def cryptWord(self, word):
+    def crypt_word(self, word):
         if " " in word:
             raise ValueError()
 
-        new_word = "";
+        new_word = ""
         for i in range(len(word)):
-            char_value = ord(word[i])
-            new_word += chr( char_value + 2)
-
+            char_value = ord(word[i]) #charcode
+            new_word += chr( char_value + 2) # ""encripta""
+    
         return new_word
 
-    def cryptWordToNumbers(self, word):
+    def crypt_word_to_numbers(self, word):
         if " " in word:
             raise ValueError()
 
-        new_word = "";
+        new_word = ""
         for i in range(len(word)):
             char_value = ord(word[i])
             new_word += str(char_value + 2)
 
         return new_word
 
-    def cryptWordWithCharsToReplace(self, word, chars_to_replace):
+    def crypt_word_with_chars_to_replace(self, word, chars_to_replace):
         if " " in word:
             raise ValueError()
         result = list(word)
@@ -33,20 +32,19 @@ class Encryptor:
                     result[i] = chr( char_value + 2)
         return "".join(result)
 
-    def cryptSentence(self, sentence):
-        new_word = "";
+    def crypt_sentence(self, sentence):
+        new_word = ""
         for i in range(len(sentence)):
             char_value = ord(sentence[i])
             new_word += chr( char_value + 2)
 
         return new_word
 
-    def getWords(self, sentence):
+    def get_words(self, sentence):
         return sentence.split()
 
-    def printWords(self, sentence):
-        words = self.getWords(sentence)
+    def print_words(self, sentence):
+        words = self.get_words(sentence)
         for word in words:
             print("<%s>" % word)
-
 
